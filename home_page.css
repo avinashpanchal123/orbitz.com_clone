@@ -38,6 +38,9 @@ body{
   text-decoration: none;
   color: white;
 }
+.navbar a:hover{
+    color: #0fa9f0;
+}
 .right-nav{
     display: flex;
     justify-content: space-between;
@@ -47,11 +50,59 @@ body{
 
 /* search container */
 
-.search_box{
+#big_img{
   background-image: url("https://cdn.pixabay.com/photo/2021/01/19/18/45/field-5932123_960_720.jpg");
   width: 100%;
   height: 500px;
+  /* padding: 50px 5% 50px 5%; */
+  padding-left: 5%;
+  padding-top: 50px;
 }
+#search_container{
+    padding: 10px;
+    width: 95%;
+    border: 3px solid red;
+    height: 300px;
+    background-color: white;
+
+}
+#plans_box{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 10px;
+    width: 95%;
+    border: 3px solid red;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between; */
+}
+
+.plans{
+    width: 15%;
+}
+.plans button{
+    width: 100%;
+    padding: 20px 0px 5px 0px;
+    box-sizing: border-box;
+    border: none;
+
+}
+
+.bottom_border{
+   border-bottom: 2px solid black;
+}
+
+#stays_plans{
+    width: 100%;
+    height: 200px;
+    border: 2px solid black;
+    padding: 20px;
+}
+#feachers{
+    display: flex;
+}
+
 
 
 /* main body started */

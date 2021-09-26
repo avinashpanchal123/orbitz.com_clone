@@ -33,14 +33,38 @@
     </nav>
 
 
-    <div class="search-container">
+    <div id="big_img">
+        <div id="search_container">
+            <div id="plans_box">
+                <div class="plans">
+                    <button  id="stays">stays</button>
+                </div>
+                <div class="plans">
+                    <button>flites</button>
+                </div>
+                <div class="plans">
+                    <button>cars</button>
+                </div>
+                <div class="plans">
+                    <button>Packages</button>
+                </div>
+                <div class="plans">
+                    <button>Things to do</button>
+                </div>
+                <div class="plans">
+                    <button>Cruises</button>
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
     <div class="main-body">
-        <div class="search_box">
+        <!-- <div class="search_box">
 
-        </div>
+        </div> -->
+   
         <div class="first-flex">
             <div class="items">
                 <div class="left-img"><img src="" alt=""></div>
@@ -109,22 +133,97 @@
 
             <div class="footer_item">
                 <div>Help</div>
-               <ul>
-                <li><a href=""> Support</a></li>
-                <li><a href="">Cancel your hotel or vacation rental <br> booking</a></li>
-                <li><a href="">Cancel your flight</a></li>
-                <li><a href=""> Refund timelines, policies & processes</a></li>
-                <li><a href="">Use an Orbitz Coupon</a></li>
-               </ul>
+                <ul>
+                    <li><a href=""> Support</a></li>
+                    <li><a href="">Cancel your hotel or vacation rental <br> booking</a></li>
+                    <li><a href="">Cancel your flight</a></li>
+                    <li><a href=""> Refund timelines, policies & processes</a></li>
+                    <li><a href="">Use an Orbitz Coupon</a></li>
+                </ul>
             </div>
 
         </footer>
         <hr>
 
-        <p class="text_center top_margin small_font">© 2021 Orbitz, LLC, an Expedia Group Company. All rights reserved.</p>
-        <p class="text_center small_font">Orbitz, Orbitz.com, and the Orbitz logo are trademarks or registered trademarks of Orbitz, LLC. CST# 2083930-50.</p>
+        <p class="text_center top_margin small_font">© 2021 Orbitz, LLC, an Expedia Group Company. All rights reserved.
+        </p>
+        <p class="text_center small_font">Orbitz, Orbitz.com, and the Orbitz logo are trademarks or registered
+            trademarks of Orbitz, LLC. CST# 2083930-50.</p>
 
         <!-- end of main body  -->
+
+
+        <script>
+
+        var btn = document.getElementById("stays");
+        console.log(btn);
+        btn.addEventListener("click", stays)
+
+          
+
+          
+            let cities = ["Mumabai", "pune","Hydrabad"]
+
+            
+            // let plans = document.querySelectorAll(".plans");
+
+            // let plans_btns = document.querySelectorAll(".plans > button");
+
+            function stays() {
+               
+                // btn.setAttribute("class","bottom_border");
+
+                stays_plans = document.createElement("div")
+
+                stays_plans.setAttribute("id", "stays_plans");
+
+                for (let i = 0; i < 4; i++) {
+                    var feachers = document.createElement("div");
+
+                    feachers.setAttribute('id', "feachers")
+                    if( i == 0){
+                        let div = document.createElement("div")
+                        var y = document.createElement("select");
+                        y.setAttribute("id", "cities");
+                        let el = 0;
+                        cities.forEach(function city_name(){
+                        
+                           let city = document.createElement("option");
+                           city.setAttribute("value", cities[el]);
+                           city.innerHTML = cities[el]
+                           y.append(city)
+                           el++;
+
+                        })
+                       
+                        div.append(y)
+                        feachers.append(div)
+                        console.log(div);
+
+                    }
+
+                     if( i == 1 || i == 2){
+                        let div = document.createElement("div")
+                        var x = document.createElement("INPUT");
+                        x.setAttribute("type", "date");
+                        div.append(x)
+                        feachers.append(div)
+                        console.log(div);
+                    }
+    
+                    
+                    feachers.setAttribute("class", "feachers");
+                    stays_plans.append(feachers)
+                }
+
+                let search_container = document.getElementById("search_container");
+
+                search_container.append(stays_plans)
+
+            }
+
+
+        </script>
     </div>
 </body>
 
