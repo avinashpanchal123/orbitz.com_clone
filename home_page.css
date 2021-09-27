@@ -122,13 +122,15 @@ body{
     /* height: 100px; */
     justify-content: space-between;
 }
-.items{
+
+.item1{
     
     width: 32%;
     border: 1px solid green;
-    
-    padding: 2%;
     /* justify-content: space-between; */
+}
+.item1 img{
+    width: 100%;
 }
 
 

@@ -8,7 +8,7 @@
     <title>Document</title>
 
     <style>
-          * {
+        * {
             box-sizing: border-box;
             margin: 0px;
             padding: 0px;
@@ -20,12 +20,14 @@
             color: #4FC3F7;
         }
 
-         a:hover {
+        a:hover {
             text-decoration: underline;
         }
-        #return{
+
+        #return {
             padding: 1%;
         }
+
         .main_container {
             width: 35%;
             /* border: 1px solid black; */
@@ -34,8 +36,8 @@
 
         }
 
-          /* sign up container started */
-          #signin_container {
+        /* sign up container started */
+        #signin_container {
             width: 100%;
             /* border: 2px solid red; */
             display: flex;
@@ -49,7 +51,7 @@
             margin-top: 20px;
 
         }
-      
+
 
         .top_margin {
             margin-top: 10px;
@@ -68,12 +70,13 @@
             margin-top: 20px;
             font-weight: 600;
         }
+
         .small_font {
             font-size: 14px;
             color: rgb(75, 74, 74);
         }
     </style>
-   
+
 </head>
 
 <body>
@@ -81,54 +84,55 @@
         <a href="home_page.html">✖</a>
     </div>
     <hr>
-     <div class="main_container">
+    <div class="main_container">
 
         <h2>sign in with email</h2>
-         <div id="signin_container">
+        <div id="signin_container">
             <form id="myform" onsubmit="signin(event)" action="">
-          
+
                 <div class="item">
-                 <input type="email" id="email" placeholder="Email address">
+                    <input type="email" id="email" placeholder="Email address">
                 </div>
-                
-                 <div class="item">
-                     <input type="password" id="password" placeholder="Password">
-                 </div>
-                 <p class="top_margin small_font">By signing in, I agree to the Orbitz Rewards Terms and Conditions.</p>
-                 <button>Sign in</button>
-         </div>
-         <p class="top_margin small_font">Not a member? <a href="signup.html">Create an account</a></p>
-     </div>
 
-    
-        <script>
-            function signin(e) {
-                e.preventDefault();
-                let myform = document.getElementById("myform");
+                <div class="item">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <p class="top_margin small_font">By signing in, I agree to the Orbitz Rewards Terms and Conditions.</p>
+                <button>Sign in</button>
+        </div>
+        <p class="top_margin small_font">Not a member? <a href="signup.html">Create an account</a></p>
+    </div>
 
-                let email = myform.email.value;
 
-                let password = myform.password.value;
-                console.log( email, password);
+    <script>
+        function signin(e) {
+            e.preventDefault();
+            let myform = document.getElementById("myform");
 
-                let all_users = JSON.parse(localStorage.getItem("users"))
+            let email = myform.email.value;
 
-                all_users.forEach(function(user){
-                    if( email === user.email && password === user.password){
-                        window.location.href ="home_page.html"
-                        alert("loged in succesfully")
-                    }else if( email.length == 0 || password.length == 0){
-                        alert("Enter yor email and Password")
-                    }
+            let password = myform.password.value;
+            console.log(email, password);
 
-                    else  if( email !== user.email || password !== user.password){
-                        alert("Wrong Email or Password")
-                    }
-                    
-                   
-                })
-            }
-        </script>
+            let all_users = JSON.parse(localStorage.getItem("users"))
+
+            all_users.forEach(function (user) {
+                if (email === user.email && password === user.password) {
+                    alert("loged in succesfully")
+                    window.location.href = "home_page.html"
+
+                } else if (email.length == 0 || password.length == 0) {
+                    alert("Enter yor email and Password")
+                }
+
+                else if (email !== user.email || password !== user.password) {
+                    alert("Wrong Email or Password")
+                }
+
+
+            })
+        }
+    </script>
 
 
 </body>
