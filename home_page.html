@@ -37,26 +37,28 @@
         <div id="search_container">
             <div id="plans_box">
                 <div class="plans">
-                    <button  id="stays">stays</button>
+                    <button id="stays">stays</button>
                 </div>
                 <div class="plans">
-                    <button>flites</button>
+                    <button id="flites">flites</button>
                 </div>
                 <div class="plans">
-                    <button>cars</button>
+                    <button id="cars">cars</button>
                 </div>
                 <div class="plans">
-                    <button>Packages</button>
+                    <button id="pakages">Packages</button>
                 </div>
                 <div class="plans">
-                    <button>Things to do</button>
+                    <button id="things">Things to do</button>
                 </div>
                 <div class="plans">
-                    <button>Cruises</button>
+                    <button id="cruises">Cruises</button>
                 </div>
 
             </div>
         </div>
+        <h1 class="white_text top_margin">Members save more</h1>
+        <h3 class="white_text">Sign in to access Insider Prices, get amazing discounts on select hotels</h3>
 
     </div>
 
@@ -64,17 +66,26 @@
         <!-- <div class="search_box">
 
         </div> -->
-   
+
         <div class="first-flex">
             <div class="item1">
-                <div class="left-img"><img src="https://i.ibb.co/D8TzpNn/ORB-Brand-Promise-Travel-As-You-Are-img-B-840x473-20210611.webp" alt=""></div>
+                <div class="left-img"><img
+                        src="https://i.ibb.co/D8TzpNn/ORB-Brand-Promise-Travel-As-You-Are-img-B-840x473-20210611.webp"
+                        alt=""></div>
             </div>
             <div class="item1">
-                <div class="left-img"><img src="https://i.ibb.co/dcPcvbb/ORB-Brand-Promise-Rewards-img-B-840x473-20210331.webp" alt=""></div>
+                <div class="left-img"><img
+                        src="https://i.ibb.co/dcPcvbb/ORB-Brand-Promise-Rewards-img-B-840x473-20210331.webp" alt="">
+                </div>
             </div>
             <div class="item1">
-                <div class="left-img"><img src="https://i.ibb.co/Br43sTL/ORB-Brand-Promise-IGLTA-img-B-840x473-20210330.webp" alt=""></div>
+                <div class="left-img"><img
+                        src="https://i.ibb.co/Br43sTL/ORB-Brand-Promise-IGLTA-img-B-840x473-20210330.webp" alt=""></div>
             </div>
+        </div>
+
+        <!-- Vacation your way flex-->
+        <div id="vacation">
         </div>
 
         <!-- footer started -->
@@ -151,71 +162,88 @@
 
 
         <script>
+            var btn = document.getElementById("stays")
 
-        var btn = document.getElementById("stays");
-        console.log(btn);
-        btn.addEventListener("click", stays)
+            btn.addEventListener("click", stays)
 
-          
 
-          
-            let cities = ["Mumabai", "pune","Hydrabad"]
-
-            
-            // let plans = document.querySelectorAll(".plans");
-
-            // let plans_btns = document.querySelectorAll(".plans > button");
 
             function stays() {
-               
-                // btn.setAttribute("class","bottom_border");
-
-                stays_plans = document.createElement("div")
-
-                stays_plans.setAttribute("id", "stays_plans");
-
-                for (let i = 0; i < 4; i++) {
-                    var feachers = document.createElement("div");
-
-                    feachers.setAttribute('id', "feachers")
-                    if( i == 0){
-                        let div = document.createElement("div")
-                        var y = document.createElement("select");
-                        y.setAttribute("id", "cities");
-                        let el = 0;
-                        cities.forEach(function city_name(){
-                        
-                           let city = document.createElement("option");
-                           city.setAttribute("value", cities[el]);
-                           city.innerHTML = cities[el]
-                           y.append(city)
-                           el++;
-
-                        })
-                       
-                        div.append(y)
-                        feachers.append(div)
-                        console.log(div);
-
-                    }
-
-                     if( i == 1 || i == 2){
-                        let div = document.createElement("div")
-                        var x = document.createElement("INPUT");
-                        x.setAttribute("type", "date");
-                        div.append(x)
-                        feachers.append(div)
-                        console.log(div);
-                    }
-    
-                    
-                    feachers.setAttribute("class", "feachers");
-                    stays_plans.append(feachers)
-                }
+                let info = document.createElement("div");
+                info.setAttribute("id", "info");
 
                 let search_container = document.getElementById("search_container");
 
-                search_container.append(stays_plans)
+                // console.log(info);
+                search_container.append(info)
+
+                let forms = document.createElement("div");
+
+                info.append(forms)
+
+                forms.setAttribute("id", "forms");
+                console.log(forms);
+
+                let cities = ["Mumabai", "pune", "Hydrabad"]
+
+                for (let i = 0; i < 4; i++) {
+                    //   let inpt = document.createElement("div");
+                    if (i == 0) {
+                        let inpt = document.createElement("div")
+                        let y = document.createElement("select");
+                        y.setAttribute("id", "cities");
+                        y.setAttribute("class", "inpt_item")
+                        y.setAttribute("placeholder", "Going to")
+                        let el = 0;
+                        cities.forEach(function city_name() {
+
+                            let city = document.createElement("option");
+                            city.setAttribute("value", cities[el]);
+                            city.innerHTML = cities[el]
+                            y.append(city)
+                            el++;
+                            inpt.append(y)
+                            forms.append(inpt)
+
+                        })
+
+                    }
+                    else if (i == 1 || i == 2) {
+                        let inpt = document.createElement("div")
+                        let x = document.createElement("INPUT");
+                        x.setAttribute("type", "date");
+                        x.setAttribute("class", "inpt_item")
+                        inpt.append(x)
+                        forms.append(inpt)
+                        // console.log(div);
+                    }
+                    else if (i == 3) {
+                        let inpt = document.createElement("div");
+                        let z = document.createElement("INPUT");
+                        z.setAttribute("class", "inpt_item")
+                        z.setAttribute("placeholder", "Travelers");
+                        inpt.append(z);
+                        forms.append(inpt)
+
+                    }
+                }
+                let btn_div = document.createElement("div");
+                let search_btn = document.createElement("button");
+                search_btn.textContent = "Search"
+                btn_div.setAttribute("id", "search_btn")
+                btn_div.append(search_btn)
+                info.append(btn_div)
+                search_btn.addEventListener("mouseenter",color_faint)
+
+                search_btn.addEventListener("mouseleave", color_dark)
+
+                function color_faint() {
+                    search_btn.style.backgroundColor = "#e97199"
+                }
+                function color_dark() {
+                    search_btn.style.backgroundColor = "#df346d"
+                }
+
 
             }
 
