@@ -109,15 +109,26 @@ body{
     height: 50px;
     margin: auto;
     border: 3px solid green;
-    display: flex;
-    justify-content: space-between;
-
+  
 }
-#forms div{
+#forms > div{
     /* flex-grow: 1; */
     height: 100%;
     border: 1px solid black;
+    width: 40%;
+}
+
+#fill{
+    display: flex;
+    height: 50px;
+    box-sizing: border-box;
+    justify-content: space-between;
+   
+}
+#fill > div{
     width: 23%;
+    height: 100%;
+    
 }
 
 
