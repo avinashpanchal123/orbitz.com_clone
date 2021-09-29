@@ -138,8 +138,8 @@
 
     #destination {
         display: grid;
-        grid-template-rows: repeat(5, 200px);
-        gap: 20px;
+        grid-template-rows: repeat(5, 220px);
+        gap: 10px;
     }
 
     #destination a {
@@ -174,11 +174,13 @@
         font-size: 14px;
         color: rgb(75, 74, 74);
     }
+
     .green_color {
         font-size: 14px;
         color: green;
     }
-    .imphasise{
+
+    .imphasise {
         font-weight: 600;
     }
 </style>
@@ -327,7 +329,7 @@
         {
             name: "Taj Mahal Palace, Mumbai",
             price: 12,
-            img: "https://th.bing.com/th/id/OIP.tYv2-wS9BJZWs16rGPQvrwHaE7?w=271&h=181&c=7&r=0&o=5&pid=1.7",
+            img: "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/103703163.jpg?k=5fcab84a62924d761b339b4992a4861451cf063cd1a6c8c5588bf01c8e2ca38c&o=",
 
         },
         {
@@ -349,6 +351,8 @@
 
     ]
 
+    // here in forEach el refer to each hotel
+
     Mumabai_hotals.forEach(function (el) {
 
         // destination is a block for hotel details
@@ -366,8 +370,11 @@
 
         let hotel = document.createElement("div");
         hotel.setAttribute("class", "hotels")
-        hotel.addEventListener("click", avi)
-        console.log(hotel);
+        // hotel.addEventListener("click", avi)
+        hotel.onclick = function () {
+            avi(el)
+        }
+        // console.log(hotel);
         destination.append(hotel)
 
 
@@ -385,13 +392,13 @@
         mumbai.textContent = "Mumbai";
         mumbai.setAttribute("class", "grey_color")
 
-        let refundable = document.createElement("p"); 
+        let refundable = document.createElement("p");
         refundable.textContent = "Fully Refundable";
         refundable.setAttribute("class", "green_color")
 
         let emph = document.createElement("p");
         emph.setAttribute("class", "imphasise")
-        console.log(emph);
+        // console.log(emph);
         emph.textContent = "4.8/5"
 
 
@@ -403,10 +410,31 @@
 
         hotel.append(img_div, details_div)
         book.append(hotel)
-        console.log(destination);
+        // console.log(destination);
+        
     })
 
-    function avi() {
-        alert("hello avi")
+    function avi(el) {
+       let reserve_mumbai = el;
+        if (el.name == "Taj Mahal Tower, Mumbai") {
+            if (localStorage.getItem(reserve_mumbai) == null) {
+                localStorage.setItem("reserve_mumbai", JSON.stringify(el))
+            };
+        }
+        else if (el.name == "Taj Mahal Palace, Mumbai") {
+            if (localStorage.getItem(reserve_mumbai) == null) {
+                localStorage.setItem("reserve_mumbai", JSON.stringify(el))
+            };
+        }
+        else if (el.name == "Planet Plaza, Mumbai") {
+            if (localStorage.getItem(reserve_mumbai) == null) {
+                localStorage.setItem("reserve_mumbai", JSON.stringify(el))
+            };
+        }
+        else if (el.name == "Hotel Sea Princes, Mumbai") {
+            if (localStorage.getItem(reserve_mumbai) == null) {
+                localStorage.setItem("reserve_mumbai", JSON.stringify(el))
+            };
+        }
     }
 </script>

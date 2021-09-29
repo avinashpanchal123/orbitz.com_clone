@@ -1,14 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+       
+
+        /* navbar */
+
+        .navbar {
+            display: flex;
+            background-color: #1A237E;
+            padding: 12px 5%;
+
+        }
+
+        .left-list {
+            width: 60%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .left-list li,
+        .right-nav li {
+            list-style: none;
+
+            border: 1px solid black;
+            padding: 10px 13px;
+        }
+
+        .left-list li {
+            margin-left: 5%;
+        }
+
+        .left-list li a,
+        .right-nav li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar a:hover {
+            color: #0fa9f0;
+        }
+
+        .right-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        body {
+            background-color: #EEEEEE;
+
+        }
+
+        #main_container {
+            width: 90%;
+            margin: auto;
+            border: 1px solid black;
+            height: 600px;
+
+        }
+
+        #first_cont{
+            width: 100%;
+            background-color: white;
+            height: 600px;
+
+        }
+        #first_cont > a{
+            text-decoration: none;
+            color: #4FC3F7;
+            /* font-size: 20px; */
+            display: block;
+            padding: 15px 0.7% 10px 0.7%; 
+        }
+        #first_cont > a:hover{
+            text-decoration: underline;
+        }
+
+
+        #img_container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 50%);
+            border: 2px solid red;
+            height: 360px;
+            gap: 3px;
+        }
+        #img_container div:nth-child(1){
+          grid-area: 1/1/3/3;
+        }
+        .image_box{
+            border: 1px solid black;
+
+        }
+        .image_box img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>
-        Welcome Avinash
-    </h1>
+    <!-- navbar -->
+    <nav class="navbar">
+
+        <ul class="left-list">
+            <div class="logo"><img src="https://www.orbitz.com/_dms/header/logo.svg?locale=en_US&siteid=70201&2"
+                    alt="Logo"></div>
+            <li> <a href="">More travel</a></li>
+        </ul>
+
+
+        <ul class="right-nav">
+            <li><a href="">Espanol</a> </li>
+            <li> <a href="">List your property</a></li>
+            <li> <a href="">Support</a></li>
+            <li> <a href="">trips</a></li>
+            <li> <a href="signin.html">Sign in</a></li>
+
+        </ul>
+    </nav>
+
+    <div id="main_container">
+
+    </div>
 </body>
+
 </html>
+
+<script>
+
+    JSON.parse(localStorage.getItem("reserve_mumbai"))
+    var reserved_hotel = (JSON.parse(localStorage.getItem("reserve_mumbai")));
+
+
+    let room_images = [
+        reserved_hotel.img,
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/103556733.jpg?k=0f462025ae978fc3fbe623a99df33355a48bc5457bcb153605e2a2335f4185fa&o=",
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/103702964.jpg?k=c4e73cd1cbff13755b72ba8e36ba235f93691c5f4b6dbd9a8c52e3223b7026e2&o=",
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/18178036.jpg?k=b7b74bc0dbd3149f920b8253dd084ed4bf0cafdc60f937005c7aee657cba07f0&o=",
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/18181072.jpg?k=7c70d8c51210844612f431d600a4fa54b2c19f37ada4d4d67ba688327caea74e&o="
+    ]
+   
+
+    let see_all_properties = document.createElement("a")
+
+    see_all_properties.textContent = "See all Properties";
+
+    see_all_properties.setAttribute("href", "mumbai.html")
+
+    let main_container = document.getElementById("main_container");
+
+    let img_container = document.createElement("div");
+
+    img_container.setAttribute("id", "img_container")
+
+
+//    here el refers to each image source
+    room_images.forEach(function (el) {
+        var image_box = document.createElement("div");
+
+        image_box.setAttribute("class", "image_box");
+
+        var img = document.createElement("img");
+
+        img.src = el;
+
+        img_container.append(image_box);
+
+        image_box.append(img)
+
+    })
+
+
+
+    // var img = document.createElement("img");
+
+    // img.style.width = "45%";
+
+    // img.src = reserved_hotel.img;
+    let first_cont = document.createElement("div");
+    first_cont.setAttribute("id", "first_cont");
+
+    first_cont.append(see_all_properties)
+    first_cont.append(img_container)
+
+    main_container.append(first_cont)
+
+    // main_container.append(see_all_properties)
+    // main_container.append(img_container)
+   
+    // main_container.append(img)
+
+    let hotel_name = document.createElement("h1");
+
+    hotel_name.textContent = reserved_hotel.name;
+
+    let info_cont = document.createElement("div");
+
+    info_cont.setAttribute("id", "info_cont")
+
+
+
+
+</script>
