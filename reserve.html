@@ -271,6 +271,7 @@
 
     JSON.parse(localStorage.getItem("reserve_mumbai"))
     var reserved_hotel = (JSON.parse(localStorage.getItem("reserve_mumbai")));
+   
 
 
     let room_images = [
@@ -280,6 +281,8 @@
         "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/18178036.jpg?k=b7b74bc0dbd3149f920b8253dd084ed4bf0cafdc60f937005c7aee657cba07f0&o=",
         "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/18181072.jpg?k=7c70d8c51210844612f431d600a4fa54b2c19f37ada4d4d67ba688327caea74e&o="
     ]
+
+    console.log(reserved_hotel.room1_price);
 
 
     let see_all_properties = document.createElement("a")

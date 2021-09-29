@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ec66b54285.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+
+    <style>
+        *{
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #2196f3;
+            margin: 0px 10px;
+        }
+
+        .payment{
+            background-color: #f8f8f8;
+            max-width: 360px;
+            margin: 80px auto;
+            height: auto;
+            padding: 35px;
+            padding-top: 70px;
+            position: relative;
+            border-radius: 5px;
+
+        }
+        .payment h2{
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .form .lable{
+            display: block;
+            color: #555555;
+            margin-bottom: 6px;
+        }
+
+        .form .input{
+            width: 100%;
+            padding: 10px 0px 10px 25px;
+            text-align: center;
+            border: 2px solid #dddddd;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            word-wrap: 3px;
+            outline: none;
+            font-size: 16px;
+
+        }
+        .card_grp{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card_item{
+            width: 48%;
+        }
+        .space{
+            margin-bottom: 20px;
+        }
+        .icon_relative{
+            position: relative;
+        }
+
+        .icon_relative .fa{
+            position: absolute;
+            left: 15px;
+            bottom: 12px;
+            font-size: 20px;
+            color: #555555;
+        }
+        .btn button{
+            margin-top: 40px;
+            background-color: #2196f3;
+            padding: 12px;
+            color: #f8f8f8;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: large;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wraper">
+        <div class="payment">
+            <h2>Payment Gateway</h2>
+
+            <div class="form">
+               <form action="">
+                <div class="card space icon_relative">
+                    <label class="lable">Card Holder:</label>
+                    <input type="text" name="card_holder" id="card_holder" class="input" placeholder="Enter Your Name">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="card space icon_relative">
+                    <label class="lable">Card Number:</label>
+                    <input type="text" name="card_number" id="card_number"  class="input" placeholder="Card Number">
+                    <i class="fa fa-credit-card" aria-hidden="true"></i>
+                </div>
+                <div class="card_grp space">
+                    <div class="card_item icon_relative">
+                        <label class="lable">Expiry date:</label>
+                        <input type="text" name="expiry_date" class="input" placeholder=" 00 / 00">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+
+                    </div>
+                    <div class="card_item icon_relative">
+                        <label class="lable">CVC</label>
+                        <input type="text" name="cvc" class="input" placeholder="000">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </div>
+               </form>
+                </div>
+                <div class="btn">
+                    <button onclick="avi()">Pay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+        function avi(){
+          alert("payment succesfull")
+          var card_holder = document.getElementById("card_holder").value;
+          var card_number = +document.getElementById("card_number").value;
+         
+          console.log(typeof(card_number));
+          
+        }
+</script>
