@@ -26,6 +26,51 @@
             background-color: #f8f8f8;
         }
 
+        /* navbar */
+
+        .navbar {
+            display: flex;
+            background-color: #0e112c;
+            padding: 12px 5%;
+
+        }
+
+        .left-list {
+            width: 60%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .left-list li,
+        .right-nav li {
+            list-style: none;
+            /*     
+    border: 1px solid black; */
+            padding: 10px 13px;
+        }
+
+        .left-list li {
+            margin-left: 5%;
+        }
+
+        .left-list li a,
+        .right-nav li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar a:hover {
+            color: #0fa9f0;
+        }
+
+        .right-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
         #main_container {
             width: 90%;
             margin: auto;
@@ -36,7 +81,7 @@
             width: 100%;
             height: 100px;
             /* background-color: yellow; */
-            border: 2px solid red;
+            /* border: 2px solid red; */
             position: relative;
             padding: 3%;
         }
@@ -47,6 +92,11 @@
             top: 36%;
             color: #555555;
         }
+        p{
+            color: #555555;
+            margin: 10px 3%;
+        }
+      
 
         .inln_block {
             display: inline-block;
@@ -68,7 +118,7 @@
             /* width: 40%; */
             display: inline-block;
             vertical-align: top;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             margin: 40px 0px;
             border-radius: 5px;
         }
@@ -81,7 +131,7 @@
         #img_div {
             width: 100%;
             height: 200px;
-            border: 2px solid black;
+            /* border: 2px solid black; */
         }
 
         #img_div>img {
@@ -173,6 +223,26 @@
 
 <body>
 
+    <!-- navbar -->
+    <nav class="navbar">
+
+        <ul class="left-list">
+            <div class="logo"><img src="https://www.orbitz.com/_dms/header/logo.svg?locale=en_US&siteid=70201&2"
+                    alt="Logo"></div>
+            <li> <a href="">More travel</a></li>
+        </ul>
+
+
+        <ul class="right-nav">
+            <li><a href="">Espanol</a> </li>
+            <li> <a href="">List your property</a></li>
+            <li> <a href="">Support</a></li>
+            <li> <a href="trips.html">trips</a></li>
+            <li> <a href="signin.html">Sign in</a></li>
+
+        </ul>
+    </nav>
+
     <div id="main_container">
 
         <h1>Secure booking — only takes 2 minutes!</h1>
@@ -242,7 +312,7 @@
 </body>
 
 </html>
-
+<!-- 
 <script>
     function avi() {
         alert("payment succesfull")
@@ -274,7 +344,7 @@
 
     let traval_details = JSON.parse(localStorage.getItem("traval_details"));
 
-    console.log(reserved_rooms);
+
 
 
     function payment_info() {
@@ -462,8 +532,9 @@
                 t
 
             }
+            setTimeout(function () { window.location.href = "booked.html" }, 3000);
 
-           
+
             bookedRooms.push(obj)
 
             localStorage.setItem("bookedRooms", JSON.stringify(bookedRooms))
@@ -472,7 +543,7 @@
 
         }
         else {
-            if ( card_num.length == 16  && coupon_code == "masai30") {
+            if (card_num.length == 16 && coupon_code == "masai30") {
 
                 text.innerHTML = null;
                 t = Math.floor(t - (t * (10 / 100)));
@@ -493,6 +564,8 @@
 
                 }
                 // console.log(obj);
+
+                setTimeout(function () { window.location.href = "booked.html" }, 3000);
                 bookedRooms.push(obj)
 
                 localStorage.setItem("bookedRooms", JSON.stringify(bookedRooms))
@@ -504,7 +577,8 @@
 
     }
 
-</script>
+
+</script> -->
 
 
-
+<script src="payment.js"></script>

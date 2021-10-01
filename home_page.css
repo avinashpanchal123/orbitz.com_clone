@@ -30,8 +30,8 @@ body{
 
 .left-list li , .right-nav li{
     list-style: none;
-    
-    border: 1px solid black;
+/*     
+    border: 1px solid black; */
     padding: 10px 13px;
 }
 .left-list li{
@@ -57,14 +57,13 @@ body{
   background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2020/07/31/ORB_Deals_v3_lpheroB_1680x945_20200730.jpg?impolicy=fcrop&w=900&h=506&q=mediumHigh");
   width: 100%;
   height: 500px;
-  /* padding: 50px 5% 50px 5%; */
+  
   padding: 50px 5% 50px 5%;
-  /* padding-top: 50px; */
+ 
 }
 #search_container{
     padding: 10px;
     width: 100%;
-    border: 3px solid red;
     height: 300px;
     background-color: white;
 
@@ -74,14 +73,7 @@ body{
 #plans_box{
     display: flex;
     justify-content: space-between;
-    /* position: relative; */
-    /* padding: 10px;
-    width: 95%;
-    border: 3px solid red;
-    height: 300px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between; */
+  
 }
 
 .plans{
@@ -123,13 +115,13 @@ body{
     width: 100%;
     height: 50px;
     margin: auto;
-    border: 3px solid green;
+   
   
 }
 #forms > div{
     /* flex-grow: 1; */
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 40%;
 }
 
@@ -179,8 +171,8 @@ body{
 .main-body{
     width: 90%;
     margin: auto;
-    border: 1px solid black;
-   
+    /* border: 1px solid black;
+    */
 }
 
 
@@ -188,7 +180,7 @@ body{
     display: flex;
     margin: 20px 0px;
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* height: 100px; */
     justify-content: space-between;
     flex-wrap: wrap;
@@ -197,7 +189,7 @@ body{
 .item1{
     
     width: 32%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     /* justify-content: space-between; */
 }
 .item1 img{
@@ -228,13 +220,13 @@ body{
     margin: 15px 0px 10px 2%;
 }
 .new_items{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-color: white;
 }
 .new_items div:nth-child(1){
     width: 30%;
     height: 100%;
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
 }
 .right_img{
     width: 100%;
@@ -245,7 +237,7 @@ body{
     width: 65%;
     height: 100%;
     margin-left: 2%;
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     padding: 30px 3% 30px 3%;
 }
 .inl_block{
@@ -260,7 +252,7 @@ body{
 #featured{
     width: 74%;
     height: 250px;
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
     margin-top: 50px;
     padding: 1%;
     margin-bottom: 20px;
@@ -285,7 +277,7 @@ body{
     display: flex;
     width: 100%;
     height: 200px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-top: 10px;
     margin-bottom: 30px;
     justify-content: space-between;
@@ -293,7 +285,7 @@ body{
 .travel_tips{
     height: 100%;
     width: 32%;
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -328,7 +320,7 @@ body{
 #vacation{
     width: 100%;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: space-between;
 
@@ -336,7 +328,7 @@ body{
 .vacation_item{
     width: 16%;
     height: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: relative;
 }
 .vacation_item >img{
@@ -373,13 +365,10 @@ body{
 }
 
 .app_items{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: relative;
 }
 
-.download_items{
-    border: 2px solid black;
-}
 .download_items img{
     width: 100%;
     height: 100%;
@@ -412,6 +401,7 @@ body{
     background-color: #df346d;
     color: white;
     border: none;
+    cursor: pointer;
     font-size: 15px;
     letter-spacing: 1px;
 }
