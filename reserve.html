@@ -485,9 +485,15 @@
             p.textContent = "$" + reserved_hotel.rooms[i].price;
             let final_price = reserved_hotel.rooms[i].price;
 
+            
+           
 
             let reserve = document.createElement("button")
-            reserve.textContent = "Reserve"
+            let payment = document.createElement("a")
+            payment.textContent = "Reserve"
+            payment.setAttribute("href", "payment.html")
+            console.log(payment);
+            reserve.append(payment)
             reserve.setAttribute("id", "reserve_btn")
             reserve.onclick = function () {
                 payment(img.src,reserved_hotel.name, name.textContent, final_price)
